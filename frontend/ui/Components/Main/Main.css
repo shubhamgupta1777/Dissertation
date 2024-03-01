@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: f7f8fb;
+  display: flex;
+}
+
+.left-panel {
+  .sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    margin: 0;
+    width: 80px;
+    height: 100%;
+    color: #fff;
+    transition: 0.4s;
+    background-image: linear-gradient(to bottom, #733472, #3a265d);
+    /* backdrop-filter: blur(40px); */
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    &.active {
+      width: 260px;
+
+      .toggle-btn .btn {
+        left: 90%;
+      }
+
+      .list .options {
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: calc(0.05s * var(--i));
+      }
+    }
+
+    .toggle-btn {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      .btn {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        height: 40px;
+        width: 40px;
+        font-size: x-large;
+        text-align: center;
+        line-height: 40px;
+        transition: 0.4s;
+        cursor: pointer;
+      }
+    }
+
+    .list {
+      margin-top: 10px;
+      padding: 6px 4px;
+      display: flex;
+      flex-direction: column;
+      .list-item {
+        /* border: 2px solid; */
+        border-radius: 10px;
+        margin: 5px 0;
+        width: 100%;
+        height: 50px;
+        list-style: none;
+        line-height: 50px;
+        font-size: large;
+
+        &.active {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+        white-space: nowrap;
+        i {
+          min-width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          line-height: 50px;
+          margin-left: 12px;
+        }
+      }
+      .options {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s;
+      }
+    }
+  }
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  margin-left: 82px;
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+  transition: 0.4s;
+
+  &.collapse {
+    margin-left: 262px;
+  }
+  .top-nav {
+    border: 2px solid black;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: bisque;
+    /* background-image: linear-gradient(to left, #733472, #3a265d); */
+
+    .profile {
+      position: fixed;
+      right: 0;
+      margin: 5px 20px;
+      text-align: center;
+      line-height: 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      color: white;
+      background-color: lightslategray;
+
+      font-size: larger;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .calendar-container {
+    max-width: 400px;
+    min-height: 320px;
+    height: fit-content;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    font-size: medium;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    button {
+      background-color: transparent;
+      border: none;
+      font-size: x-large;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+  
+  .days-container {
+    display: grid;
+    height: 320px;
+    padding: 5px;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 5px;
+  }
+  
+  .today {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+
+  footer {
+    width: 100%;
+    height: 100px;
+    background-color: #3a265d;
+  }
+}

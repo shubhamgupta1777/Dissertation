@@ -4,11 +4,10 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url("../../Assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background-color: #5e42a6; */
+  background-image: url("../Resources/Assets/background.jpg");
 }
 
 .sidebar {
@@ -34,10 +33,10 @@ body {
 .nav .options {
   font-size: 16px;
   font-family: Arial;
-  flex: auto;
+  margin-bottom: 50px;
   padding: 10px 10px;
   text-align: right;
-  padding-bottom: 50px;
+  cursor: pointer;
   /* border: 2px solid white; */
 
   a {
@@ -52,7 +51,7 @@ body {
     /* background-image: linear-gradient(to right, #5e42a6, #b74e91); */
   }
   &:hover {
-    opacity: 0.5;
+    opacity: 0.6;
   }
 }
 

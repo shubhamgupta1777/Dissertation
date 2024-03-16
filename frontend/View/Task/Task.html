@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./Task.css">
+  <title>Main Window</title>
+  <script src="https://kit.fontawesome.com/5060ba3f74.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="toggle-btn">
+        <i class="fa-solid fa-bars btn"></i>
+      </div>
+      <ul class="list">
+        <li class="list-item active">
+          <a href="#home">
+            <i class="fa-solid fa-house"></i>
+            <span class="options" style="--i:1;">Projects</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#home">
+            <i class="bx bxs-grid-alt"></i>
+            <span class="options" style="--i:2;">Dashboard</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#home">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span class="options" style="--i:3;">Task Board</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#home">
+            <i class="bx bxs-bar-chart-square"></i>
+            <span class="options" style="--i:4;">Reports & Analytics</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#home">
+            <i class="fa-solid fa-gear"></i>
+            <span class="options" style="--i:5;">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="right-panel">
+
+      <div class="main">
+        <div class="kanban-board">
+          <div class="heading">
+            <div>
+              <h2>Task Board</h2>
+            </div>
+            <div class="add_task">
+              <i class="fa fa-plus" aria-hidden="true"></i>Add Task
+            </div>
+          </div>
+          <div class="container">
+            <div class="card-container">
+              <h3>Active</h3>
+              <hr>
+              <div class="card-holder active">
+                <div class="card">
+                  <b class="badge success">Low</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card">
+                  <b class="badge warning">Medium</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card">
+                  <b class="badge danger">High</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+              </div>
+            </div>
+            <div class="card-container">
+              <h3>In Progress</h3>
+              <hr>
+              <div class="card-holder">
+                <div class="card">
+                  <b class="badge success" id="badge">Low</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5 class="user">Gupta, Shubham</h5>
+                  <h6 class="deadline">due in <span id="days">xx</span> days</h6>
+                </div>
+                <div class="card">
+                  <b class="badge warning">Medium</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card">
+                  <b class="badge danger">High</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card"></div>
+                <div class="card"></div>
+
+              </div>
+            </div>
+            <div class="card-container">
+              <h3>Complete</h3>
+              <hr>
+              <div class="card-holder">
+                <div class="card">
+                  <b class="badge success">Low</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card">
+                  <b class="badge warning">Medium</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card">
+                  <b class="badge danger">High</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card">
+                  <b class="badge success">Low</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card">
+                  <b class="badge warning">Medium</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+                <div class="card">
+                  <b class="badge danger">High</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5>01-01-2024</h5>
+                </div>
+              </div>
+            </div>
+            <div class="card-container">
+              <h3>Closed</h3>
+              <hr>
+              <div class="card-holder">
+                <div class="card">
+                  <b class="badge success" id="badge">Low</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5 class="user">Gupta, Shubham</h5>
+                  <h6 class="deadline">due in <span id="days">xx</span> days</h6>
+                </div>
+                <div class="card">
+                  <b class="badge success" id="badge">Low</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5 class="user">Gupta, Shubham</h5>
+                  <h6 class="deadline">due in <span id="days">xx</span> days</h6>
+                </div>
+                <div class="card">
+                  <b class="badge success" id="badge">Low</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5 class="user">Gupta, Shubham</h5>
+                  <h6 class="deadline">due in <span id="days">xx</span> days</h6>
+                </div>
+                <div class="card">
+                  <b class="badge success" id="badge">Low</b>
+                  <h5 class="title">Title of the task</h5>
+                  <h5 class="user">Gupta, Shubham</h5>
+                  <h6 class="deadline">due in <span id="days">xx</span> days</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="overlay" id="overlay"></div> <!-- Overlay element -->
+    <!-- add task -->
+    <div class="form-popup" id="addTaskForm">
+      <form class="form-container">
+        <i class="fa fa-x close btn cancel" onclick="closeObjForm()"></i>
+        <h2>New Task</h2>
+        <label for="deliverable">Deliverable:</label>
+        <select>
+          <option value="DEL1" selected>DEL1</option>
+          <option value="DEL2">DEL2</option>
+          <option value="DEL3">DEL3</option>
+        </select>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+        <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+        <label for="priority">Priority:</label>
+        <select>
+          <option value="LOW" selected>Low</option>
+          <option value="MEDIUM">Medium</option>
+          <option value="HIGH">High</option>
+        </select>
+        <label for="user">User:</label>
+        <select>
+          <option value="User1" selected>User1</option>
+          <option value="User2">User2</option>
+          <option value="User3">User3</option>
+        </select>
+        <button type="submit" class="btn">Add</button>
+      </form>
+    </div>
+    <!-- edit task -->
+    <div class="form-popup" id="editTaskForm">
+      <form class="form-container1">
+        <div class="heading">
+          <i class="fa fa-x close btn cancel" onclick="closeObjForm()"></i>
+          <h2>Task</h2>
+        </div>
+        <div class="form-body">
+          <div class="left">
+            <label for="deliverable">Deliverable:</label>
+            <select>
+              <option value="DEL1" selected>DEL1</option>
+              <option value="DEL2">DEL2</option>
+              <option value="DEL3">DEL3</option>
+            </select>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            <label for="status">Status:</label>
+            <select>
+              <option value="ACTIVE" selected>Active</option>
+              <option value="IN_PROGRESS">In Progress</option>
+              <option value="COMPLETE">Complete</option>
+              <option value="CLOSED">Closed</option>
+            </select>
+          </div>
+          <div class="right">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+            <label for="priority">Priority:</label>
+            <select>
+              <option value="LOW" selected>Low</option>
+              <option value="MEDIUM">Medium</option>
+              <option value="HIGH">High</option>
+            </select>
+            <label for="user">User:</label>
+            <select>
+              <option value="User1" selected>User1</option>
+              <option value="User2">User2</option>
+              <option value="User3">User3</option>
+            </select>
+            <div class="btns">
+              <div class="tooltip">
+                <i class="fa-regular fa-floppy-disk save"></i>
+                <span class="tooltiptext">Save</span>
+              </div>
+              <div class="tooltip">
+                <i class="fa-solid fa-trash-can remove"></i>
+                <span class="tooltiptext">Remove</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </form>
+    </div>
+  </div>
+
+  <script src="./Task.js"></script>
+</body>
+
+</html>

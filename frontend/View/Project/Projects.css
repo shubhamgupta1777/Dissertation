@@ -1,0 +1,277 @@
+body {
+  margin: 0%;
+  font-family: Poppins, sans-serif;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../../Resources/Assets/background.jpg);
+
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: 80px;
+      height: 100%;
+      transition: 0.4s;
+      background-image: linear-gradient(to bottom, #733472, #3a265d);
+      /* backdrop-filter: blur(40px); */
+      border-right: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+      &.active {
+        width: 260px;
+
+        .toggle-btn .btn {
+          left: 90%;
+        }
+
+        .list .options {
+          opacity: 1;
+          pointer-events: auto;
+          transition-delay: calc(0.05s * var(--i));
+        }
+      }
+
+      .toggle-btn {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        .btn {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          height: 40px;
+          width: 40px;
+          color: #fff;
+          font-size: x-large;
+          text-align: center;
+          line-height: 40px;
+          transition: 0.4s;
+          cursor: pointer;
+        }
+      }
+
+      .list {
+        margin-top: 10px;
+        padding: 6px 4px;
+        display: flex;
+        flex-direction: column;
+        .list-item {
+          /* border: 2px solid; */
+          border-radius: 10px;
+          margin: 5px 0;
+          width: 100%;
+          height: 50px;
+          list-style: none;
+          line-height: 50px;
+          font-size: large;
+
+          &.active {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+        }
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          color: #fff;
+          text-decoration: none;
+          white-space: nowrap;
+          i {
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 50px;
+            margin-left: 12px;
+          }
+        }
+        .options {
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.15s;
+        }
+      }
+    }
+    .right-panel {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      margin-left: 80px;
+      transition: 0.4s;
+
+      &.collapse {
+        margin-left: 260px;
+      }
+
+      .main {
+        display: block;
+        margin: 30px;
+
+        .heading {
+          color: #fff;
+          display: flex;
+          justify-content: space-between;
+          .btn-container {
+            .btn1 {
+              cursor: pointer;
+              text-align: center;
+              height: 30px;
+              line-height: 30px;
+              width: 100px;
+              border: #fff 1px solid;
+              border-radius: 5px;
+              background-color: rgb(255, 255, 255, 0.9);
+              color: rgb(0, 0, 0, 0.7);
+            }
+          }
+        }
+
+        .list-container {
+          width: 100%;
+          max-height: 600px;
+          display: flex;
+          flex-direction: column;
+          backdrop-filter: blur(30px);
+          border-radius: 5px;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+          .table-container {
+            overflow: auto;
+            scrollbar-width: 5px;
+
+            .list {
+              width: 100%;
+              td {
+                height: 50px;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                /* border: 0.5px solid #fff; */
+                font-size: larger;
+                color: #fff;
+                padding: 5px;
+                cursor: pointer;
+                &:hover {
+                  background-color: rgb(255, 255, 255, 0.3);
+                }
+              }
+            }
+          }
+        }
+
+        .project-container {
+          margin-top: 20px;
+          width: 100%;
+          height: 600px;
+          backdrop-filter: blur(30px);
+          border-radius: 5px;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(49, 49, 49, 0.2); /* Semi-transparent black */
+        z-index: 8; /* Ensure the overlay is below the form popup */
+      }
+
+      /* Popup container */
+      .form-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9;
+      }
+
+      /* Form inside the popup */
+      .form-container {
+        max-width: 400px;
+        padding: 20px;
+        color: #fff;
+        backdrop-filter: blur(30px);
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Full-width input fields */
+      .form-container input[type="text"],
+      .form-container input[type="date"],
+      .form-container select,
+      .form-container input[type="number"],
+      .form-container textarea {
+        resize: none;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: slategrey;
+      }
+
+      /* Textarea */
+      .form-container textarea {
+        height: 100px;
+      }
+
+      /* Button */
+      .form-container .btn {
+        background-color: rgb(255, 255, 255, 0.9);
+        color: slategrey;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        margin-right: 10px;
+        margin-top: 10px;
+
+        &.cancel {
+          color: #fff;
+        }
+      }
+
+      .form-container .btn.cancel {
+        background-color: transparent;
+        border: none;
+        float: right;
+        padding: 0;
+        font-size: larger;
+      }
+
+      /* Add animation */
+      @keyframes popup {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

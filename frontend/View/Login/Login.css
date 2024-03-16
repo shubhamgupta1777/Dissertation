@@ -1,24 +1,15 @@
 body {
   font-family: "Poppins", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url("../../../Assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-image: url("../../Resources/Assets/background.jpg");
 }
-
-hr {
-  width: 50px;
-  height: 5px;
-  border-radius: 10px;
-  background-color: #fff;
-}
-
 .wrapper {
   width: 420px;
   background: transparent;
@@ -34,6 +25,13 @@ hr {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 36px;
   text-align: center;
+}
+
+hr {
+  width: 50px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 .container {
@@ -108,34 +106,18 @@ hr {
   font-weight: 700;
 }
 
-.wrapper .register-link {
+.wrapper .signup-link {
   font-size: 14.5px;
   text-align: center;
   margin-top: 20px;
 }
 
-.register-link p a {
+.signup-link p a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
 }
 
-.register-link p a:hover {
-  text-decoration: underline;
-}
-
-.wrapper .login-link {
-  font-size: 14.5px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.login-link p a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login-link p a:hover {
+.signup-link p a:hover {
   text-decoration: underline;
 }

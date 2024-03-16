@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./Main.css">
+  <title>Main Window</title>
+  <script src="https://kit.fontawesome.com/5060ba3f74.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="toggle-btn">
+        <i class="fa-solid fa-bars btn"></i>
+      </div>
+      <ul class="list">
+        <li class="list-item active">
+          <a href="#home">
+            <i class="fa-solid fa-house"></i>
+            <span class="options" style="--i:1;">Projects</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#home">
+            <i class="bx bxs-grid-alt"></i>
+            <span class="options" style="--i:2;">Dashboard</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#home">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span class="options" style="--i:3;">Task Board</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#home">
+            <i class="bx bxs-bar-chart-square"></i>
+            <span class="options" style="--i:4;">Reports & Analytics</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#home">
+            <i class="fa-solid fa-gear"></i>
+            <span class="options" style="--i:5;">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="right-panel">
+
+      <div class="main">
+        <div class="row-1">
+          <div class="heading">
+            <h2>Dashboard</h2>
+          </div>
+          <div class="tab-container">
+            <div class="tab">
+              <div class="icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div class="num">
+                <h2>21</h2>
+              </div>
+              <div class="label">
+                <b>Total Projects</b>
+              </div>
+            </div>
+            <div class="tab">
+              <div class="icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <div class="num">
+                <h2>21</h2>
+              </div>
+              <div class="label">
+                <b>Total Tasks</b>
+              </div>
+            </div>
+            <div class="tab">
+              <div class="icon">
+                <i class="fa fa-users"></i>
+              </div>
+              <div class="num">
+                <h2>21</h2>
+              </div>
+              <div class="label">
+                <b>Members</b>
+              </div>
+            </div>
+            <div class="tab">
+              <div class="icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div class="num">
+                <h2>
+                  90%
+                  <i class="fa-solid fa-arrow-up" style="color: #63E6BE; display: none;"></i>
+                  <i class="fa-solid fa-arrow-down" style="color: #e66565; display: none;"></i>
+                </h2>
+              </div>
+              <div class="label">
+                <b>Productivity</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="calendar-container">
+            <div class="calendar">
+              <div class="header">
+                <button id="prevBtn">«</button>
+                <h2 id="monthYear">February 2024</h2>
+                <button id="nextBtn">»</button>
+              </div>
+              <div class="days-container" id="daysContainer"></div>
+            </div>
+          </div>
+          <div class="list-container">
+            <div class="project-list">
+              <div class="table-container">
+                <table class="list">
+                  <tr>
+                    <th>Project</th>
+                    <th>Status</th>
+                    <th>Deadline</th>
+                    <th>Completion</th>
+                    <th>Project Manager</th>
+                  </tr>
+                  <tr class="project">
+                    <td> Project 1 - Complete your dissertation</td>
+                    <td> <b class="badge warning">In Progress</b> </td>
+                    <td> 12-12-2023 </td>
+                    <td> 90% </td>
+                    <td> Gupta, Shubham </td>
+                  </tr>
+                  <tr class="project">
+                    <td> Project 2 - Plan to move to London</td>
+                    <td> <b class="badge success">Completed</b> </td>
+                    <td> 12-12-2023 </td>
+                    <td> 100% </td>
+                    <td> Gupta, Shubham </td>
+                  </tr>
+                  <tr class="project">
+                    <td> Project 3 - Job Hunting</td>
+                    <td> <b class="badge danger">Overdue</b> </td>
+                    <td> 12-12-2023 </td>
+                    <td> 30% </td>
+                    <td> Gupta, Shubham </td>
+                  </tr>
+                  <tr class="project">
+                    <td> Project 4 - Put efforts towards your personal goals and wishes</td>
+                    <td> <b class="badge danger">Overdue</b> </td>
+                    <td> 12-12-2023 </td>
+                    <td> 30% </td>
+                    <td> Gupta, Shubham </td>
+                  </tr>
+                  <tr class="project">
+                    <td> Project 4 - Put efforts towards your personal goals and wishes</td>
+                    <td> <b class="badge danger">Overdue</b> </td>
+                    <td> 12-12-2023 </td>
+                    <td> 30% </td>
+                    <td> Gupta, Shubham </td>
+                  </tr>
+                  <tr class="project">
+                    <td> Project 4 - Put efforts towards your personal goals and wishes</td>
+                    <td> <b class="badge danger">Overdue</b> </td>
+                    <td> 12-12-2023 </td>
+                    <td> 30% </td>
+                    <td> Gupta, Shubham </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./Main.js"></script>
+</body>
+
+</html>

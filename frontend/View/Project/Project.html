@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./Project.css">
+    <title>Main Window</title>
+    <script src="https://kit.fontawesome.com/5060ba3f74.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="toggle-btn">
+                <i class="fa-solid fa-bars btn"></i>
+            </div>
+            <ul class="list">
+                <li class="list-item active">
+                    <a href="#home">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="options" style="--i:1;">Projects</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#home">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="options" style="--i:2;">Dashboard</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#home">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        <span class="options" style="--i:3;">Task Board</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#home">
+                        <i class="bx bxs-bar-chart-square"></i>
+                        <span class="options" style="--i:4;">Reports & Analytics</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#home">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="options" style="--i:5;">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="right-panel">
+
+            <div class="main">
+                <div class="left">
+                    <div class="heading">
+                        <h2 id="project-name">Project Name</h2>
+                        <div class="btns">
+                            <div class="tooltip">
+                                <i class="fa-solid fa-pen update_project"></i>
+                                <span class="tooltiptext">Edit</span>
+                            </div>
+                            <div class="tooltip">
+                                <i class="fa-solid fa-trash"></i>
+                                <span class="tooltiptext">Delete</span>
+                            </div>
+                            <div class="tooltip">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span class="tooltiptext">Leave</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <b class="badge success">Completed</b>
+                    <div class="description">
+                        With supporting text below as a natural lead-in to additional contenposuere erat a ante.
+                        Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore,
+                        quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem
+                        ipsum dolor sit amet.
+                        <br><br>
+                        Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore,
+                        quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem
+                        ipsum dolor sit amet. With supporting text below as a natural lead-in to additional
+                        contenposuere erat a ante.
+                        <br><br>
+                        With supporting text below as a natural lead-in to additional contenposuere erat a ante.
+                        Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore,
+                        quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem
+                        ipsum dolor sit amet.
+                        <br><br>
+                        Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore,
+                        quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem
+                        ipsum dolor sit amet. With supporting text below as a natural lead-in to additional
+                        contenposuere erat a ante.
+
+                    </div>
+                    <div class="details">
+                        <div class="date">
+                            <h4>Start Date</h4>
+                            <p id="startDate">17 March 2018</p>
+                        </div>
+                        <div class="date">
+                            <h4>End Date</h4>
+                            <p id="endDate">17 March 2018</p>
+                        </div>
+                    </div>
+                    <hr class="left-hr">
+                    <div class="tm-container">
+                        <div class="heading">
+                            <h3>Project Members</h3>
+                            <div class="btns">
+                                <div class="tooltip">
+                                    <i class="fa-solid fa-plus add_mem"></i>
+                                    <span class="tooltiptext">Add New Member</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="members-list">
+                            <table class="members">
+                                <tr>
+                                    <td>TM 1</td>
+                                </tr>
+                                <tr>
+                                    <td>TM 2</td>
+                                </tr>
+                                <tr>
+                                    <td>TM 3</td>
+                                </tr>
+                                <tr>
+                                    <td>TM 4</td>
+                                </tr>
+                                <tr>
+                                    <td>TM 5</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr class="middle-hr">
+                <div class="right">
+                    <div class="obj-container">
+                        <div class="heading">
+                            <h3>Objectives</h3>
+                            <div class="btns">
+                                <div class="tooltip">
+                                    <i class="fa-solid fa-plus add_obj"></i>
+                                    <span class="tooltiptext">Add New Objective</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="objectives-list">
+                            <table class="objectives">
+                                <tr>
+                                    <td>OBJ 1</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 2</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 3</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 4</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 5</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 1</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 2</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 3</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 4</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 5</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 1</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 2</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 3</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 4</td>
+                                </tr>
+                                <tr>
+                                    <td>OBJ 5</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <hr class="right-hr">
+                    <div class="deliverables-container">
+                        <div class="heading">
+                            <h3>Deliverables</h3>
+                            <div class="btns">
+                                <div class="tooltip">
+                                    <i class="fa-solid fa-plus add_del"></i>
+                                    <span class="tooltiptext">Add New Deliverable</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="deliverables-list">
+                            <table class="deliverables">
+                                <tr>
+                                    <td>DEL 1</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 2</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 3</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 4</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 5</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 1</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 2</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 3</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 4</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 5</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 1</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 2</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 3</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 4</td>
+                                </tr>
+                                <tr>
+                                    <td>DEL 5</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Objectives -->
+        <!-- add objective -->
+        <div class="overlay" id="overlay"></div> <!-- Overlay element -->
+        <div class="form-popup" id="addObjectiveForm">
+            <form class="form-container">
+                <i class="fa fa-x close btn cancel" onclick="closeObjForm()"></i>
+                <h2>New Objective</h2>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="priority">Priority:</label>
+                <select>
+                    <option value="LOW" selected>Low</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="HIGH">High</option>
+                </select>
+                <button type="submit" class="btn">Add</button>
+            </form>
+        </div>
+        <!-- edit objective -->
+        <div class="form-popup" id="editObjectiveForm">
+            <form class="form-container">
+                <i class="fa fa-x close btn cancel" onclick="closeObjForm()"></i>
+                <h2>Objective</h2>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="priority">Priority:</label>
+                <select>
+                    <option value="LOW" selected>Low</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="HIGH">High</option>
+                </select>
+                <div class="btns">
+                    <div class="tooltip">
+                        <i class="fa-regular fa-floppy-disk save"></i>
+                        <span class="tooltiptext">Save</span>
+                    </div>
+                    <div class="tooltip">
+                        <i class="fa-solid fa-trash-can remove"></i>
+                        <span class="tooltiptext">Delete</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Deliverables -->
+        <!-- add deliverable -->
+        <div class="form-popup" id="addDeliverableForm">
+            <form class="form-container">
+                <i class="fa fa-x close btn cancel" onclick="closeDelForm()"></i>
+                <h2>Create Deliverable</h2>
+                <label for="objective">Objective:</label>
+                <select>
+                    <option value="OBJ1" selected>OBJ1</option>
+                    <option value="OBJ2">OBJ2</option>
+                    <option value="OBJ3">OBJ3</option>
+                </select>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+                <label for="deadLine">Deadline:</label>
+                <input type="date" id="deadLine" name="deadLine" required>
+                <label for="priority">Priority:</label>
+                <select>
+                    <option value="LOW" selected>Low</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="HIGH">High</option>
+                </select>
+                <button type="submit" class="btn">Add</button>
+            </form>
+        </div>
+        <!-- edit deliverable -->
+        <div class="form-popup" id="editDeliverableForm">
+            <form class="form-container">
+                <i class="fa fa-x close btn cancel" onclick="closeDelForm()"></i>
+                <h2>Deliverable</h2>
+                <label for="objective">Objective:</label>
+                <select>
+                    <option value="OBJ1" selected>OBJ1</option>
+                    <option value="OBJ2">OBJ2</option>
+                    <option value="OBJ3">OBJ3</option>
+                </select>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+                <label for="deadLine">Deadline:</label>
+                <input type="date" id="deadLine" name="deadLine" required>
+                <label for="priority">Priority:</label>
+                <select>
+                    <option value="LOW" selected>Low</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="HIGH">High</option>
+                </select>
+                <div class="btns">
+                    <div class="tooltip">
+                        <i class="fa-regular fa-floppy-disk save"></i>
+                        <span class="tooltiptext">Save</span>
+                    </div>
+                    <div class="tooltip">
+                        <i class="fa-solid fa-trash-can remove"></i>
+                        <span class="tooltiptext">Delete</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Project Member -->
+        <!-- add member -->
+        <div class="form-popup" id="addMemberForm">
+            <form class="form-container">
+                <i class="fa fa-x close btn cancel" onclick="closeMemForm()"></i>
+                <h2>Add Member</h2>
+                <label for="UID">User ID:</label>
+                <input type="text" id="UID" name="UID" required>
+                <button type="submit" class="btn">Add</button>
+            </form>
+        </div>
+        <!-- edit member -->
+        <div class="form-popup" id="editMemberForm">
+            <form class="profile-card">
+                <div class="profile-left">
+                    <div class="icon">
+                        <i class="fa fa-circle-user" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <hr class="profile-hr">
+                <div class="profile-right">
+                    <h2>John Doe</h2>
+                    <div class="user-data">
+                        <label>User ID:</label>
+                        <label>TM1</label>
+                    </div>
+                    <div class="user-data">
+                        <label>Email:</label>
+                        <label>tm1@demo.com</label>
+                    </div>
+                    <div class="user-data">
+                        <label>Role:</label>
+                        <select>
+                            <option value="SUPERVISOR">Supervisor</option>
+                            <option value="PROJECT_MANAGER" selected>Project Manager</option>
+                            <option value="TEAM_MEMBER">Team Member</option>
+                        </select>
+                    </div>
+                    <div class="btns">
+                        <div class="tooltip">
+                            <i class="fa-regular fa-floppy-disk save"></i>
+                            <span class="tooltiptext">Save</span>
+                        </div>
+                        <div class="tooltip">
+                            <i class="fa-solid fa-trash-can remove"></i>
+                            <span class="tooltiptext">Remove</span>
+                        </div>
+                    </div>
+                </div>
+                <i class="fa fa-x close btn cancel" onclick="closeMemForm()"></i>
+            </form>
+        </div>
+        <!-- Project -->
+        <div class="form-popup" id="addProjectForm">
+            <form class="form-container">
+                <i class="fa fa-x close btn cancel" onclick="closeForm()"></i>
+                <h2>Edit Project</h2>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+                <label for="deadLine">Deadline:</label>
+                <input type="date" id="deadLine" name="deadLine" required>
+                <button type="submit" class="btn">Save</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="./Project.js"></script>
+</body>
+
+</html>

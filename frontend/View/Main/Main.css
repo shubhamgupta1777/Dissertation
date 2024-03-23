@@ -159,7 +159,7 @@ body {
               color: rgb(255, 255, 255, 0.9);
 
               .icon {
-                font-size: x-large;
+                font-size: xx-large;
                 /* background-color: #3a265d; */
               }
               .num {
@@ -247,8 +247,8 @@ body {
           }
 
           .list-container {
-            width: 100%;
-            background-color: rgb(255, 255, 255, 0.1);
+            /* width: 100%;
+            background-color: rgb(255, 255, 255, 0.1); */
             /* backdrop-filter: blur(30px); */
 
             .project-list {

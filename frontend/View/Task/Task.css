@@ -7,7 +7,7 @@ body {
   font-family: Poppins, sans-serif;
   min-height: 100vh;
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
   background-position: center;
   background-image: url(../../Resources/Assets/background.jpg);
 
@@ -125,12 +125,11 @@ body {
       }
 
       .main {
-        margin: 50px;
         height: 700px;
-        border-radius: 5px;
-        backdrop-filter: blur(30px);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        /* border-radius: 5px; */
+        /* backdrop-filter: blur(30px); */
+        /* border: 2px solid rgba(255, 255, 255, 0.2); */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
         padding: 20px;
 
         .kanban-board {
@@ -158,6 +157,14 @@ body {
               color: rgb(0, 0, 0, 0.7);
               i {
                 margin: 5px;
+              }
+            }
+
+            .change_project {
+              margin-left: 20px;
+              select {
+                padding: 5px 20px;
+                /* padding-right: 20px; */
               }
             }
           }
@@ -310,7 +317,7 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 9;
+      z-index: 10;
     }
 
     /* Form inside the popup */

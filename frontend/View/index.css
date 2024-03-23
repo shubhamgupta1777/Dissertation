@@ -20,6 +20,8 @@ body {
   color: #fff;
   border: none;
   backdrop-filter: blur(30px);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   /* background-color: #312450; */
 }
 

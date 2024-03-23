@@ -20,31 +20,31 @@
       </div>
       <ul class="list">
         <li class="list-item active">
-          <a href="#home">
+          <a href="../Project/Projects.html">
             <i class="fa-solid fa-house"></i>
             <span class="options" style="--i:1;">Projects</span>
           </a>
         </li>
         <li class="list-item">
-          <a href="#home">
+          <a href="../Main/Main.html">
             <i class="bx bxs-grid-alt"></i>
             <span class="options" style="--i:2;">Dashboard</span>
           </a>
         </li>
         <li class="list-item">
-          <a href="#home">
+          <a href="../Task/Task.html">
             <i class="fa-solid fa-clipboard-check"></i>
             <span class="options" style="--i:3;">Task Board</span>
           </a>
         </li>
         <li class="list-item">
-          <a href="#home">
+          <a href="#Reports">
             <i class="bx bxs-bar-chart-square"></i>
             <span class="options" style="--i:4;">Reports & Analytics</span>
           </a>
         </li>
         <li class="list-item">
-          <a href="#home">
+          <a href="#Settings">
             <i class="fa-solid fa-gear"></i>
             <span class="options" style="--i:5;">Settings</span>
           </a>
@@ -61,6 +61,13 @@
             </div>
             <div class="add_task">
               <i class="fa fa-plus" aria-hidden="true"></i>Add Task
+            </div>
+            <div class="change_project">
+              <select>
+                <option value="Project 1" selected>Project 1</option>
+                <option value="Project 2">Project 2</option>
+                <option value="Project 3">Project 3</option>
+              </select>
             </div>
           </div>
           <div class="container">
@@ -185,36 +192,46 @@
     <div class="overlay" id="overlay"></div> <!-- Overlay element -->
     <!-- add task -->
     <div class="form-popup" id="addTaskForm">
-      <form class="form-container">
-        <i class="fa fa-x close btn cancel" onclick="closeObjForm()"></i>
-        <h2>New Task</h2>
-        <label for="deliverable">Deliverable:</label>
-        <select>
-          <option value="DEL1" selected>DEL1</option>
-          <option value="DEL2">DEL2</option>
-          <option value="DEL3">DEL3</option>
-        </select>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea>
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" required>
-        <label for="endDate">End Date:</label>
+      <form class="form-container1">
+        <div class="heading">
+          <i class="fa fa-x close btn cancel" onclick="closeObjForm()"></i>
+          <h2>Task</h2>
+        </div>
+        <div class="form-body">
+          <div class="left">
+            <label for="deliverable">Deliverable:</label>
+            <select>
+              <option value="DEL1" selected>DEL1</option>
+              <option value="DEL2">DEL2</option>
+              <option value="DEL3">DEL3</option>
+            </select>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+          </div>
+          <div class="right">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+            <label for="endDate">End Date:</label>
             <input type="date" id="endDate" name="endDate" required>
-        <label for="priority">Priority:</label>
-        <select>
-          <option value="LOW" selected>Low</option>
-          <option value="MEDIUM">Medium</option>
-          <option value="HIGH">High</option>
-        </select>
-        <label for="user">User:</label>
-        <select>
-          <option value="User1" selected>User1</option>
-          <option value="User2">User2</option>
-          <option value="User3">User3</option>
-        </select>
-        <button type="submit" class="btn">Add</button>
+            <label for="priority">Priority:</label>
+            <select>
+              <option value="LOW" selected>Low</option>
+              <option value="MEDIUM">Medium</option>
+              <option value="HIGH">High</option>
+            </select>
+            <label for="user">User:</label>
+            <select>
+              <option value="User1" selected>User1</option>
+              <option value="User2">User2</option>
+              <option value="User3">User3</option>
+            </select>
+            <div class="btns">
+              <button type="submit" class="btn">Add</button>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
     <!-- edit task -->

@@ -122,12 +122,8 @@ body {
 
       .main {
         /* height: 100%; */
-        margin: 30px;
+        /* backdrop-filter: blur(30px); */
         display: flex;
-        backdrop-filter: blur(30px);
-        border-radius: 10px;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
         .left {
           width: 50%;

@@ -4,6 +4,7 @@ const projectSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
+    maxlength: [50, "cannot exceed 50 characters"],
   },
   description: {
     type: String,
@@ -21,6 +22,10 @@ const projectSchema = mongoose.Schema({
     type: String,
     enum: ["ACTIVE", "IN_PROGRESS", "COMPLETE", "OVERDUE"],
     default: "ACTIVE",
+  },
+  complete: {
+    type: Number,
+    default: 0,
   },
 });
 

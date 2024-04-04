@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Objective = require("../models/objective");
+const Deliverable = require("../models/deliverable");
+const Task = require("../models/task");
 
 // get all objectives
 router.get("/objectives", async (req, res) => {
@@ -36,7 +38,7 @@ router.get("/objective", async (req, res) => {
   }
 });
 
-// create a objective
+// create objective
 router.post("/objective", async (req, res) => {
   try {
     let objective = new Objective({
@@ -52,7 +54,7 @@ router.post("/objective", async (req, res) => {
   }
 });
 
-// update a objective
+// update objective
 router.patch("/objective/:id", async (req, res) => {
   const { id } = req.params;
   const updates = req.body;
@@ -61,6 +63,7 @@ router.patch("/objective/:id", async (req, res) => {
     // Update the objective with the specified email
     const objective = await Objective.findByIdAndUpdate(id, updates, {
       new: true,
+      runValidators: true,
     });
 
     if (objective) {
@@ -74,18 +77,40 @@ router.patch("/objective/:id", async (req, res) => {
   }
 });
 
-// delete a objective
+// delete objective
 router.delete("/objective/:id", async (req, res) => {
   try {
-    const objective = await Objective.findByIdAndDelete(req.params.id);
-    if (objective) {
-      res.json(objective); // Send the updated objective as JSON response
-    } else {
-      res.status(404).send("objective not found");
+    const { id } = req.params;
+    const objective = await Objective.findById(id);
+
+    if (!objective) {
+      return res.status(404).json({ message: "Objective not found" });
     }
+
+    const deliverables = await Deliverable.find({ objective: id });
+
+    if (deliverables) {
+      for (const deliverable of deliverables) {
+        // Delete all tasks associated with the deliverable
+        await Task.deleteMany({ deliverable: deliverable._id });
+        // Delete the deliverable
+        await Deliverable.findByIdAndDelete(deliverable._id);
+      }
+
+    }
+
+    await Objective.findByIdAndDelete(id);
+
+    res.status(200).json({
+      message:
+        "Objective and associated deliverables and tasks deleted successfully",
+    });
   } catch (error) {
-    console.error("Error updating objective:", error);
-    res.status(500).send("An error occurred while updating objective");
+    console.error(
+      "Error deleting objective and associated deliverables and tasks:",
+      error
+    );
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 

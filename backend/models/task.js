@@ -1,19 +1,25 @@
 const mongoose = require("mongoose");
 
 const taskSchema = mongoose.Schema({
+  project: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "project",
+    required: true,
+  },
   deliverable: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Deliverable",
+    ref: "deliverable",
     required: true,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user",
     required: true,
   },
   name: {
     type: String,
     required: true,
+    maxlength: [50, 'cannot exceed 50 characters']
   },
   description: {
     type: String,
@@ -34,8 +40,12 @@ const taskSchema = mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ["ACTIVE", "IN_PROGRESS", "COMPLETE", "CLOSED"],
+    enum: ["ACTIVE", "IN_PROGRESS", "COMPLETE", "CLOSED", "OVERDUE"],
     default: "ACTIVE",
+  },
+  dueDays: {
+    type: Number,
+    default: 0,
   },
 });
 

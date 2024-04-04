@@ -1,8 +1,14 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const mongoose = require("mongoose");
+
+
+// Enable CORS for all routes
+app.use(cors());
+
 
 const uri =
   "mongodb+srv://" +
@@ -33,10 +39,11 @@ const projectRouter = require("./routes/project");
 const objectiveRouter = require('./routes/objective');
 const deliverableRouter = require('./routes/deliverable');
 const taskRouter = require('./routes/task');
+const dashboardRouter = require('./routes/dashboard');
 
 
 
-app.use("/api", userRouter, projectRouter, objectiveRouter, deliverableRouter, taskRouter);
+app.use("/api", userRouter, projectRouter, objectiveRouter, deliverableRouter, taskRouter, dashboardRouter);
 
 app.listen(3000, () => {
   console.log("Server Started");

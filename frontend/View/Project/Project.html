@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./Project.css">
-    <title>Main Window</title>
+    <title>Project | PMT</title>
     <script src="https://kit.fontawesome.com/5060ba3f74.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -21,35 +22,51 @@
             <ul class="list">
                 <li class="list-item active">
                     <a href="../Project/Projects.html">
-                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-solid fa-briefcase"></i>
                         <span class="options" style="--i:1;">Projects</span>
                     </a>
                 </li>
                 <li class="list-item">
-                    <a href="../Main/Main.html">
-                        <i class="bx bxs-grid-alt"></i>
+                    <a href="../Dashboard/Dashboard.html">
+                        <i class="fa-solid fa-dice-d6"></i>
                         <span class="options" style="--i:2;">Dashboard</span>
                     </a>
                 </li>
                 <li class="list-item">
+                    <a href="../Deliverable/Deliverable.html">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span class="options" style="--i:3;">Deliverables</span>
+                    </a>
+                </li>
+                <li class="list-item">
                     <a href="../Task/Task.html">
-                        <i class="fa-solid fa-clipboard-check"></i>
-                        <span class="options" style="--i:3;">Task Board</span>
+                        <i class="fa-solid fa-clipboard"></i>
+                        <span class="options" style="--i:4;">Task Board</span>
                     </a>
                 </li>
                 <li class="list-item">
-                    <a href="#Reports">
-                        <i class="bx bxs-bar-chart-square"></i>
-                        <span class="options" style="--i:4;">Reports & Analytics</span>
-                    </a>
-                </li>
-                <li class="list-item">
-                    <a href="#Settings">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="options" style="--i:5;">Settings</span>
+                    <a href="../Reports/Reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span class="options" style="--i:5;">Reports & Analytics</span>
                     </a>
                 </li>
             </ul>
+            <hr>
+            <ul class="profile-btn">
+                <li class="item">
+                    <a href="../Settings/Settings.html">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="options" style="--i:6;">Settings</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="../index.html">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="options" style="--i:7;">Log Out</span>
+                    </a>
+                </li>
+            </ul>
+
         </div>
         <div class="right-panel">
 
@@ -59,11 +76,11 @@
                         <h2 id="project-name">Project Name</h2>
                         <div class="btns">
                             <div class="tooltip">
-                                <i class="fa-solid fa-pen update_project"></i>
+                                <i class="fa-solid fa-pen" onclick="editProject()"></i>
                                 <span class="tooltiptext">Edit</span>
                             </div>
                             <div class="tooltip">
-                                <i class="fa-solid fa-trash"></i>
+                                <i class="fa-solid fa-trash" onclick="deleteDialog()"></i>
                                 <span class="tooltiptext">Delete</span>
                             </div>
                             <div class="tooltip">
@@ -73,27 +90,9 @@
                         </div>
 
                     </div>
-                    <b class="badge success">Completed</b>
-                    <div class="description">
-                        With supporting text below as a natural lead-in to additional contenposuere erat a ante.
-                        Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore,
-                        quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem
-                        ipsum dolor sit amet.
-                        <br><br>
-                        Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore,
-                        quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem
-                        ipsum dolor sit amet. With supporting text below as a natural lead-in to additional
-                        contenposuere erat a ante.
-                        <br><br>
-                        With supporting text below as a natural lead-in to additional contenposuere erat a ante.
-                        Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore,
-                        quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem
-                        ipsum dolor sit amet.
-                        <br><br>
-                        Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore,
-                        quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem
-                        ipsum dolor sit amet. With supporting text below as a natural lead-in to additional
-                        contenposuere erat a ante.
+                    <b class="badge" id="status">Completed</b>
+                    <div class="description" id="description">
+                        Project Description
 
                     </div>
                     <div class="details">
@@ -104,37 +103,6 @@
                         <div class="date">
                             <h4>End Date</h4>
                             <p id="endDate">17 March 2018</p>
-                        </div>
-                    </div>
-                    <hr class="left-hr">
-                    <div class="tm-container">
-                        <div class="heading">
-                            <h3>Project Members</h3>
-                            <div class="btns">
-                                <div class="tooltip">
-                                    <i class="fa-solid fa-plus add_mem"></i>
-                                    <span class="tooltiptext">Add New Member</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="members-list">
-                            <table class="members">
-                                <tr>
-                                    <td>TM 1</td>
-                                </tr>
-                                <tr>
-                                    <td>TM 2</td>
-                                </tr>
-                                <tr>
-                                    <td>TM 3</td>
-                                </tr>
-                                <tr>
-                                    <td>TM 4</td>
-                                </tr>
-                                <tr>
-                                    <td>TM 5</td>
-                                </tr>
-                            </table>
                         </div>
                     </div>
                 </div>
@@ -152,7 +120,7 @@
                         </div>
                         <div class="objectives-list">
                             <table class="objectives">
-                                <tr>
+                                <!-- <tr>
                                     <td>OBJ 1</td>
                                 </tr>
                                 <tr>
@@ -196,70 +164,38 @@
                                 </tr>
                                 <tr>
                                     <td>OBJ 5</td>
-                                </tr>
+                                </tr> -->
 
                             </table>
                         </div>
                     </div>
-                    <hr class="right-hr">
-                    <div class="deliverables-container">
+                    <div class="tm-container">
                         <div class="heading">
-                            <h3>Deliverables</h3>
+                            <h3>Project Members</h3>
                             <div class="btns">
                                 <div class="tooltip">
-                                    <i class="fa-solid fa-plus add_del"></i>
-                                    <span class="tooltiptext">Add New Deliverable</span>
+                                    <i class="fa-solid fa-plus add_mem"></i>
+                                    <span class="tooltiptext">Add New Member</span>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="deliverables-list">
-                            <table class="deliverables">
-                                <tr>
-                                    <td>DEL 1</td>
+                        <div class="members-list">
+                            <table class="members">
+                                <!-- <tr>
+                                    <td>TM 1</td>
                                 </tr>
                                 <tr>
-                                    <td>DEL 2</td>
+                                    <td>TM 2</td>
                                 </tr>
                                 <tr>
-                                    <td>DEL 3</td>
+                                    <td>TM 3</td>
                                 </tr>
                                 <tr>
-                                    <td>DEL 4</td>
+                                    <td>TM 4</td>
                                 </tr>
                                 <tr>
-                                    <td>DEL 5</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 1</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 2</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 3</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 4</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 5</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 1</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 2</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 3</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 4</td>
-                                </tr>
-                                <tr>
-                                    <td>DEL 5</td>
-                                </tr>
+                                    <td>TM 5</td>
+                                </tr> -->
                             </table>
                         </div>
                     </div>
@@ -271,15 +207,15 @@
         <!-- add objective -->
         <div class="overlay" id="overlay"></div> <!-- Overlay element -->
         <div class="form-popup" id="addObjectiveForm">
-            <form class="form-container">
+            <form class="form-container obj">
                 <i class="fa fa-x close btn cancel" onclick="closeObjForm()"></i>
                 <h2>New Objective</h2>
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="title" name="title" required maxlength="50">
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" required></textarea>
                 <label for="priority">Priority:</label>
-                <select>
+                <select id="priority">
                     <option value="LOW" selected>Low</option>
                     <option value="MEDIUM">Medium</option>
                     <option value="HIGH">High</option>
@@ -289,92 +225,26 @@
         </div>
         <!-- edit objective -->
         <div class="form-popup" id="editObjectiveForm">
-            <form class="form-container">
+            <form class="form-container obj">
                 <i class="fa fa-x close btn cancel" onclick="closeObjForm()"></i>
                 <h2>Objective</h2>
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="title" name="title" required maxlength="50">
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" required></textarea>
                 <label for="priority">Priority:</label>
-                <select>
+                <select id="priority">
                     <option value="LOW" selected>Low</option>
                     <option value="MEDIUM">Medium</option>
                     <option value="HIGH">High</option>
                 </select>
                 <div class="btns">
                     <div class="tooltip">
-                        <i class="fa-regular fa-floppy-disk save"></i>
+                        <i class="fa-regular fa-floppy-disk save" onclick="updateObj()"></i>
                         <span class="tooltiptext">Save</span>
                     </div>
                     <div class="tooltip">
-                        <i class="fa-solid fa-trash-can remove"></i>
-                        <span class="tooltiptext">Delete</span>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <!-- Deliverables -->
-        <!-- add deliverable -->
-        <div class="form-popup" id="addDeliverableForm">
-            <form class="form-container">
-                <i class="fa fa-x close btn cancel" onclick="closeDelForm()"></i>
-                <h2>Create Deliverable</h2>
-                <label for="objective">Objective:</label>
-                <select>
-                    <option value="OBJ1" selected>OBJ1</option>
-                    <option value="OBJ2">OBJ2</option>
-                    <option value="OBJ3">OBJ3</option>
-                </select>
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" required></textarea>
-                <label for="startDate">Start Date:</label>
-                <input type="date" id="startDate" name="startDate" required>
-                <label for="deadLine">Deadline:</label>
-                <input type="date" id="deadLine" name="deadLine" required>
-                <label for="priority">Priority:</label>
-                <select>
-                    <option value="LOW" selected>Low</option>
-                    <option value="MEDIUM">Medium</option>
-                    <option value="HIGH">High</option>
-                </select>
-                <button type="submit" class="btn">Add</button>
-            </form>
-        </div>
-        <!-- edit deliverable -->
-        <div class="form-popup" id="editDeliverableForm">
-            <form class="form-container">
-                <i class="fa fa-x close btn cancel" onclick="closeDelForm()"></i>
-                <h2>Deliverable</h2>
-                <label for="objective">Objective:</label>
-                <select>
-                    <option value="OBJ1" selected>OBJ1</option>
-                    <option value="OBJ2">OBJ2</option>
-                    <option value="OBJ3">OBJ3</option>
-                </select>
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" required></textarea>
-                <label for="startDate">Start Date:</label>
-                <input type="date" id="startDate" name="startDate" required>
-                <label for="deadLine">Deadline:</label>
-                <input type="date" id="deadLine" name="deadLine" required>
-                <label for="priority">Priority:</label>
-                <select>
-                    <option value="LOW" selected>Low</option>
-                    <option value="MEDIUM">Medium</option>
-                    <option value="HIGH">High</option>
-                </select>
-                <div class="btns">
-                    <div class="tooltip">
-                        <i class="fa-regular fa-floppy-disk save"></i>
-                        <span class="tooltiptext">Save</span>
-                    </div>
-                    <div class="tooltip">
-                        <i class="fa-solid fa-trash-can remove"></i>
+                        <i class="fa-solid fa-trash-can remove" onclick="deleteObj()"></i>
                         <span class="tooltiptext">Delete</span>
                     </div>
                 </div>
@@ -383,11 +253,11 @@
         <!-- Project Member -->
         <!-- add member -->
         <div class="form-popup" id="addMemberForm">
-            <form class="form-container">
+            <form class="form-container tm">
                 <i class="fa fa-x close btn cancel" onclick="closeMemForm()"></i>
                 <h2>Add Member</h2>
                 <label for="email">Email ID:</label>
-                <input type="text" id="email" name="email" required>
+                <input type="email" id="email" name="email" required>
                 <button type="submit" class="btn">Add</button>
             </form>
         </div>
@@ -401,14 +271,14 @@
                 </div>
                 <hr class="profile-hr">
                 <div class="profile-right">
-                    <h2>John Doe</h2>
+                    <h2 id="name">John Doe</h2>
                     <div class="user-data">
-                        <label>User Name:</label>
-                        <label>TM1</label>
+                        <label>User ID:</label>
+                        <label id="id">TM1</label>
                     </div>
                     <div class="user-data">
                         <label>Email:</label>
-                        <label>tm1@demo.com</label>
+                        <label id="email">tm1@demo.com</label>
                     </div>
                     <div class="user-data">
                         <label>Role:</label>
@@ -424,7 +294,7 @@
                             <span class="tooltiptext">Save</span>
                         </div>
                         <div class="tooltip">
-                            <i class="fa-solid fa-trash-can remove"></i>
+                            <i class="fa-solid fa-trash-can remove" onclick="removeUser()"></i>
                             <span class="tooltiptext">Remove</span>
                         </div>
                     </div>
@@ -432,13 +302,21 @@
                 <i class="fa fa-x close btn cancel" onclick="closeMemForm()"></i>
             </form>
         </div>
+        <div id="fail-dialog" class="dialog">
+            <div class="btn">
+                <i class="fa fa-x close" onclick="closeDialogForm()"></i>
+            </div>
+            <div class="dialog-content">
+                <h2>message</h2>
+            </div>
+        </div>
         <!-- Project -->
-        <div class="form-popup" id="addProjectForm">
-            <form class="form-container">
+        <div class="form-popup" id="editProjectForm">
+            <form class="form-container proj">
                 <i class="fa fa-x close btn cancel" onclick="closeForm()"></i>
                 <h2>Edit Project</h2>
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="title" name="title" required maxlength="50">
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" required></textarea>
                 <label for="startDate">Start Date:</label>
@@ -448,6 +326,16 @@
                 <button type="submit" class="btn">Save</button>
 
             </form>
+        </div>
+        <div id="delete-dialog" class="dialog">
+            <div class="dialog-content">
+                <h2>delete project?</h2>
+            </div>
+            <div class="btns">
+                <button onclick="closeDialogForm()">No</button>
+                <button onclick="deleteProject()">Yes</button>
+
+            </div>
         </div>
     </div>
 

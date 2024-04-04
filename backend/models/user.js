@@ -4,6 +4,7 @@ const userSchema = mongoose.Schema({
   uname: {
     type: String,
     required: true,
+    maxlength: [20, 'cannot exceed 20 characters']
   },
   email: {
     type: String,
@@ -11,8 +12,12 @@ const userSchema = mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
+    required: true
   },
+  projects: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'project'
+}]
 });
 
 module.exports = mongoose.model("user", userSchema);

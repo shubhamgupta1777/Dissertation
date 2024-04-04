@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./Main.css">
-  <title>Main Window</title>
+  <link rel="stylesheet" href="./Dashboard.css">
+  <title>Dashboard | PMT</title>
   <script src="https://kit.fontawesome.com/5060ba3f74.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -19,37 +20,53 @@
         <i class="fa-solid fa-bars btn"></i>
       </div>
       <ul class="list">
-        <li class="list-item active">
-          <a href="#home">
-            <i class="fa-solid fa-house"></i>
+        <li class="list-item">
+          <a href="../Project/Projects.html">
+            <i class="fa-solid fa-briefcase"></i>
             <span class="options" style="--i:1;">Projects</span>
           </a>
         </li>
-        <li class="list-item">
-          <a href="#home">
-            <i class="bx bxs-grid-alt"></i>
+        <li class="list-item active">
+          <a href="../Dashboard/Dashboard.html">
+            <i class="fa-solid fa-dice-d6"></i>
             <span class="options" style="--i:2;">Dashboard</span>
           </a>
         </li>
         <li class="list-item">
-          <a href="#home">
-            <i class="fa-solid fa-clipboard-check"></i>
-            <span class="options" style="--i:3;">Task Board</span>
+          <a href="../Deliverable/Deliverable.html">
+            <i class="fa-solid fa-layer-group"></i>
+            <span class="options" style="--i:3;">Deliverables</span>
           </a>
         </li>
         <li class="list-item">
-          <a href="#home">
-            <i class="bx bxs-bar-chart-square"></i>
-            <span class="options" style="--i:4;">Reports & Analytics</span>
+          <a href="../Task/Task.html">
+            <i class="fa-solid fa-clipboard"></i>
+            <span class="options" style="--i:4;">Task Board</span>
           </a>
         </li>
         <li class="list-item">
-          <a href="#home">
-            <i class="fa-solid fa-gear"></i>
-            <span class="options" style="--i:5;">Settings</span>
+          <a href="../Reports/Reports.html">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span class="options" style="--i:5;">Reports & Analytics</span>
           </a>
         </li>
       </ul>
+      <hr>
+      <ul class="profile-btn">
+        <li class="item">
+          <a href="../Settings/Settings.html">
+            <i class="fa-solid fa-gear"></i>
+            <span class="options" style="--i:6;">Settings</span>
+          </a>
+        </li>
+        <li class="item">
+          <a href="../index.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="options" style="--i:7;">Log Out</span>
+          </a>
+        </li>
+      </ul>
+
     </div>
     <div class="right-panel">
 
@@ -61,10 +78,10 @@
           <div class="tab-container">
             <div class="tab">
               <div class="icon">
-                <i class="fa-solid fa-briefcase"></i>
+                <i class="bx bxs-briefcase"></i>
               </div>
               <div class="num">
-                <h2>21</h2>
+                <h2 id="project_count">0</h2>
               </div>
               <div class="label">
                 <b>Total Projects</b>
@@ -72,10 +89,10 @@
             </div>
             <div class="tab">
               <div class="icon">
-                <i class="fa-solid fa-clipboard-check"></i>
+                <i class="bx bx-clipboard"></i>
               </div>
               <div class="num">
-                <h2>21</h2>
+                <h2 id="total_tasks">0</h2>
               </div>
               <div class="label">
                 <b>Total Tasks</b>
@@ -83,28 +100,26 @@
             </div>
             <div class="tab">
               <div class="icon">
-                <i class="fa fa-users"></i>
+                <i class="bx bx-task"></i>
               </div>
               <div class="num">
-                <h2>21</h2>
+                <h2 id="total_tasks_completed">0</h2>
               </div>
               <div class="label">
-                <b>Members</b>
+                <b>Tasks Completed</b>
               </div>
             </div>
             <div class="tab">
               <div class="icon">
-                <i class="fa-solid fa-chart-line"></i>
+                <i class="bx bx-task-x"></i>
               </div>
               <div class="num">
-                <h2>
-                  90%
-                  <i class="fa-solid fa-arrow-up" style="color: #63E6BE; display: none;"></i>
-                  <i class="fa-solid fa-arrow-down" style="color: #e66565; display: none;"></i>
+                <h2 id="total_tasks_pending">
+                  0
                 </h2>
               </div>
               <div class="label">
-                <b>Productivity</b>
+                <b>Tasks Pending</b>
               </div>
             </div>
           </div>
@@ -124,56 +139,49 @@
           <div class="list-container">
             <div class="project-list">
               <div class="table-container">
-                <table class="list">
+                <table class="list" id="project-list">
                   <tr>
                     <th>Project</th>
                     <th>Status</th>
                     <th>Deadline</th>
-                    <th>Completion</th>
-                    <th>Project Manager</th>
+                    <th>Percent Complete</th>
                   </tr>
-                  <tr class="project">
+                  <!-- <tr class="project">
                     <td> Project 1 - Complete your dissertation</td>
                     <td> <b class="badge warning">In Progress</b> </td>
                     <td> 12-12-2023 </td>
-                    <td> 90% </td>
-                    <td> Gupta, Shubham </td>
+                    <td> 90 % </td>
                   </tr>
                   <tr class="project">
                     <td> Project 2 - Plan to move to London</td>
                     <td> <b class="badge success">Completed</b> </td>
                     <td> 12-12-2023 </td>
-                    <td> 100% </td>
-                    <td> Gupta, Shubham </td>
+                    <td> 10 % </td>
                   </tr>
                   <tr class="project">
                     <td> Project 3 - Job Hunting</td>
                     <td> <b class="badge danger">Overdue</b> </td>
                     <td> 12-12-2023 </td>
-                    <td> 30% </td>
-                    <td> Gupta, Shubham </td>
+                    <td> 25 % </td>
                   </tr>
                   <tr class="project">
                     <td> Project 4 - Put efforts towards your personal goals and wishes</td>
                     <td> <b class="badge danger">Overdue</b> </td>
                     <td> 12-12-2023 </td>
-                    <td> 30% </td>
-                    <td> Gupta, Shubham </td>
+                    <td> 50 % </td>
                   </tr>
                   <tr class="project">
                     <td> Project 4 - Put efforts towards your personal goals and wishes</td>
                     <td> <b class="badge danger">Overdue</b> </td>
                     <td> 12-12-2023 </td>
-                    <td> 30% </td>
-                    <td> Gupta, Shubham </td>
+                    <td> 30 % </td>
                   </tr>
                   <tr class="project">
                     <td> Project 4 - Put efforts towards your personal goals and wishes</td>
                     <td> <b class="badge danger">Overdue</b> </td>
                     <td> 12-12-2023 </td>
-                    <td> 30% </td>
-                    <td> Gupta, Shubham </td>
-                  </tr>
+                    <td> 77 % </td>
+                  </tr> -->
                 </table>
               </div>
             </div>
@@ -184,7 +192,7 @@
 
   </div>
 
-  <script src="./Main.js"></script>
+  <script src="./Dashboard.js"></script>
 </body>
 
 </html>

@@ -7,24 +7,26 @@
     <title>Sign Up | PMT</title>
     <link rel="stylesheet" href="./SignUp.css">
     <script src="https://kit.fontawesome.com/5060ba3f74.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 
 <body>
     <div class="wrapper">
-        <form action="">
+        <form id="sign-up">
             <h1>Sign Up</h1>
             <hr>
             <div class="container">
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required />
+                    <input type="text" id="username" placeholder="Username" required maxlength="20"/>
                     <i class="fa fa-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Email" required />
+                    <input type="email" id="email" placeholder="Email" required/>
                     <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required />
+                    <input type="password" id="password" placeholder="Password" required minlength="5" maxlength="10"/>
                     <i class="fa fa-lock"></i>
                 </div>
             </div>
@@ -36,6 +38,25 @@
             </div>
         </form>
     </div>
+    <div class="overlay" id="overlay"></div> <!-- Overlay element -->
+    <div id="success-dialog" class="dialog">
+        <div class="btn">
+            <i class="fa fa-x close"></i>
+        </div>
+        <div class="dialog-content">
+            <h2>User created successfully!</h2>
+            <button><a href="../Login/Login.html">Login</a></button>
+        </div>
+    </div>
+    <div id="fail-dialog" class="dialog">
+        <div class="btn">
+            <i class="fa fa-x close"></i>
+        </div>
+        <div class="dialog-content">
+            <h2>User creation failed!</h2>
+        </div>
+    </div>
+    <script src="./SignUp.js"></script>
 </body>
 
 </html>

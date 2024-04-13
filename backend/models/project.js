@@ -23,8 +23,10 @@ const projectSchema = mongoose.Schema({
     enum: ["ACTIVE", "IN_PROGRESS", "COMPLETE", "OVERDUE"],
     default: "ACTIVE",
   },
-  complete: {
+  progress: {
     type: Number,
+    min: 0,
+    max: 100,
     default: 0,
   },
 });

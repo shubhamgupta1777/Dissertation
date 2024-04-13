@@ -68,7 +68,7 @@ function renderProjectStats() {
         row.innerHTML = `<td> ${project.name} </td>
         <td><b class="badge ${badge}"> ${project.status} </b></td>
         <td> ${formattedDate} </td>
-        <td> ${project.complete} % </td>`;
+        <td> ${project.progress} % </td>`;
         list.appendChild(row);
       });
     },
